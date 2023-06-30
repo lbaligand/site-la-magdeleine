@@ -1,0 +1,61 @@
+
+body {
+	
+    /*background: url('../img/maison1.jpg') no-repeat center center fixed;
+	*/
+	background:		#F5F5DC;
+}
+
+.brand {
+	font-family: 'Bilbo Swash Caps', serif;
+    font-size: 68px;
+	font-weight:200;
+	color: 		#331a00;
+}
+
+.brand-name{
+	font-family: 'Bilbo Swash Caps', serif;
+    font-size: 68px;
+	font-weight:100;
+	color: 		#8B4513;
+}
+
+.address-bar{
+	color:#8B4513;
+}
+
+.navbar-nav {
+    letter-spacing: 1px;
+}
+
+ul {
+	font-size: 19px;
+}
+
+.patrimoine {
+	font-family: 'Bilbo Swash Caps', serif;
+	color: 		#8B4513;
+	text-transform: capitalize;
+	font-size: 30px;
+}
+
+.right.carousel-control, .left.carousel-control {
+	/*opacity: 0;
+	filter:alpha(opacity=0);*/
+}
+
+.img-full-portrait {
+	margin: 0 auto;
+}
+
+.couleur{
+	color: #331a00;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.chaise{
+	background-image:url("img/Select/chaise.jpg");
+	background-repeat:no-repeat;
+	background-position:center center;
+}
