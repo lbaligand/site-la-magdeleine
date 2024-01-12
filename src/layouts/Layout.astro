@@ -1,0 +1,57 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import "../css/base.css";
+import "@fontsource/bilbo-swash-caps";
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+    <slot name="seo" />
+  </head>
+  <body class="bg-background font-body">
+    <p class="font-title text-7xl drop-shadow-special text-center pt-10 pb-4">
+      Le domaine de la Magdeleine
+    </p>
+    <p
+      class="text-secondary lg:uppercase tracking-widest text-xl drop-shadow-special text-center"
+    >
+      Châtenay - Bourgogne du Sud
+    </p>
+
+    <nav
+      class="w-full flex-wrap my-8 text-menu uppercase text-lg tracking-wide h-fit flex justify-center items-center bg-white"
+    >
+      <a class="p-8 hover:text-menu-hover" href="/">Accueil</a>
+      <a class="p-8 hover:text-menu-hover" href="/presentation">Présentation</a>
+      <a class="p-8 hover:text-menu-hover" href="/histoire">Histoire</a>
+      <a class="p-8 hover:text-menu-hover" href="/situation">Situation</a>
+      <a class="p-8 hover:text-menu-hover" href="/activites">Activités</a>
+      <a class="p-8 hover:text-menu-hover" href="/tarifs">Tarifs</a>
+      <a class="p-8 hover:text-menu-hover" href="/avis">Avis</a>
+    </nav>
+
+    <main><slot /></main>
+    <footer>
+      <div class="bg-white w-full h-32 flex justify-center items-center">
+        <p>
+          La Magdeleine, 950 route de Gibles, 71800 Châtenay - Tel:+33 6 30 36
+          58 03 - <a
+            class="text-blue-400 hover:text-blue-500 hover:underline"
+            href="mailto:b.baligand@orange.fr">b.baligand@orange.fr</a
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

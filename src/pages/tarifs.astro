@@ -1,0 +1,36 @@
+---
+import { SEO } from "astro-seo";
+import WhiteCard from "../components/WhiteCard.astro";
+import Layout from "../layouts/Layout.astro";
+import image2 from "../assets/img/EnseigneLaMagdeleine.jpg";
+---
+
+<Layout title="Le Domaine de la Magdeleine - Tarifs">
+  <SEO
+    slot="seo"
+    description=""
+    openGraph={{
+      basic: {
+        title: "Domaine de la Magdeleine - Tarifs",
+        type: "website",
+        image: image2.src,
+      },
+    }}
+  />
+  <WhiteCard heading="Tarifs">
+    <ul>
+      <li>WE (2 nuits) : 650 €</li>
+      <li>WE (3 nuits) : 750 €</li>
+      <li>Mid WE (4 nuits) : 850 €</li>
+      <li>1 semaine (7 nuits): 1200 €</li>
+      <li>Ascension, Noël : 300 € par nuit (minimum 4 nuits )</li>
+      <li>Jour de l'An : 500 € par nuit (2 nuits minimum)</li>
+    </ul>
+    <p>
+      Forfait ménage : 100 €<br />
+
+      En Juillet et Août, location à la semaine.<br />
+      Nos amis les animaux ne sont pas admis.
+    </p>
+  </WhiteCard>
+</Layout>

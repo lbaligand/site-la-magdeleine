@@ -1,0 +1,22 @@
+---
+export interface Props {
+  heading?: string;
+}
+
+const { heading } = Astro.props as Props;
+---
+
+<section
+  class="w-full bg-white p-8 lg:w-4/5 lg:max-w-[1280px] mb-8 h-fit mx-auto relative"
+>
+  {
+    heading && (
+      <Fragment>
+        <h2 class="border-t border-b min-w-56 border-menu p-4 text-menu-hover w-fit mx-auto tracking-widest uppercase font-bold text-lg text-center">
+          {heading}
+        </h2>
+      </Fragment>
+    )
+  }
+  <slot />
+</section>

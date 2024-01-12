@@ -1,0 +1,68 @@
+---
+import { SEO } from "astro-seo";
+import { Image } from "astro:assets";
+import gp from "../assets/img/grandpere1943.jpg";
+import machine from "../assets/img/machineacoudre.jpg";
+import WhiteCard from "../components/WhiteCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Le Domaine de la Magdeleine - Histoire">
+  <SEO
+    slot="seo"
+    description=""
+    openGraph={{
+      basic: {
+        title: "Domaine de la Magdeleine - Histoire",
+        type: "website",
+        image: gp.src,
+      },
+    }}
+  />
+  <WhiteCard heading="Histoire de la Magdeleine">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 my-4">
+      <Image
+        class="mx-auto"
+        src={gp}
+        title="Claude Marie 1943"
+        alt=""
+        widths={[400, 800]}
+        sizes={`(max-width: 768px) 400px, 800px`}
+      />
+      <p>
+        Chaque lieu, chaque maison est une porte ouverte sur le monde que l'on
+        aime : authentique, naturel et débordant de valeurs retrouvées.<br />
+        La ferme de la Magdeleine est entrée dans la famille en 1918, elle a été
+        achetée par mon arrière- grand-père, pour son fils Claude Marie à son retour
+        de la guerre.<br />
+        Il s'est marié avec Marie Antoinette, institutrice à Bois Sainte Marie.<br
+        />
+        La maison d'habitation était beaucoup plus réduite que celle actuelle, elle
+        datait de 1431. Elle se composait de 2 pièces sur une cave voutée avec une
+        galerie extérieure en bois. <br />
+        <br />
+        <br />
+      </p>
+      <p>
+        <br />
+        La Magdeleine c'est une maison de filles! Claude Marie et Marie Antoinette
+        ont eu trois filles, c'est Germaine la benjamine qui est restée dans la ferme
+        familiale. Trois générations vivaient alors dans la ferme qui faisait surtout
+        de l'élevage de vaches charolaises. Puis l'exode rural est passé par là.
+        Le temps a passé, la dernière génération vivant et travaillant sur la ferme
+        s'est éteinte.<br />
+        Depuis La Magdeleine renait pour une nouvelle vie, elle est peu à peu transformée
+        en maison de vacances hors du temps.<br />
+        Bienvenue à La Magdeleine!
+      </p>
+
+      <Image
+        class="mx-auto"
+        src={machine}
+        alt=""
+        widths={[400, 800]}
+        sizes={`(max-width: 768px) 400px, 800px`}
+      />
+    </div>
+  </WhiteCard>
+</Layout>

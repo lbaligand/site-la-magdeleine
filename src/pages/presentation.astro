@@ -1,0 +1,105 @@
+---
+import { SEO } from "astro-seo";
+import { Image } from "astro:assets";
+import vueCour from "../assets/img/vuecour.jpg";
+import tableJardin from "../assets/img/tablejardin.jpg";
+import Layout from "../layouts/Layout.astro";
+import WhiteCard from "../components/WhiteCard.astro";
+---
+
+<Layout title="Le Domaine de la Magdeleine - Présentation">
+  <SEO
+    slot="seo"
+    description=""
+    openGraph={{
+      basic: {
+        title: "Domaine de la Magdeleine - Présentation",
+        type: "website",
+        image: tableJardin.src,
+      },
+    }}
+  />
+  <WhiteCard heading="Présentation du domaine de la Magdeleine">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 my-4">
+      <Image
+        class="mx-auto"
+        src={vueCour}
+        alt=""
+        widths={[400, 800]}
+        sizes={`(max-width: 768px) 400px, 800px`}
+      />
+      <div>
+        <p>
+          <a
+            target="_blank"
+            class="text-blue-400 hover:text-blue-500 hover:underline"
+            href="http://www.bourgogneromane.com/edifices/dun.htm"
+            >La montagne de Dun</a
+          >, ancienne citadelle du Moyen Age constitue un joli panorama depuis
+          la maison. La campagne environnante est verdoyante. Avec son bocage,
+          ses haies, ses murets en pierre et ses sentiers nombreux, les
+          alentours de la Magdeleine sont une invitation à la ballade à pied ou
+          en vélo.
+        </p><br />
+        <p>
+          Le domaine de la Magdeleine se situe en <a
+            target="_blank"
+            class="text-blue-400 hover:text-blue-500 hover:underline"
+            href="http://www.charolais-brionnais.fr/unesco.html"
+            >Charolais Brionnais</a
+          >, dans le petit village de Châtenay. Vous pourrez visiter châteaux,
+          villages typiques, églises romanes (Bois sainte Marie, Anzy le Duc...
+          , la Venise Charolaise...
+        </p><br />
+        <p>
+          Nous mettons en location cette maison de famille depuis peu.
+          Progressivement nous la transformons en ferme de vacances hors du
+          temps tout en lui rendant son âme. Pour réunir votre tribu, pour vous
+          retrouver entre amis, pour passer des moments uniques en pleine
+          nature. Simplement pour vivre l'essentiel.
+        </p>
+      </div>
+    </div>
+  </WhiteCard>
+  <WhiteCard heading="Informations pratiques">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
+      <Image
+        class="mx-auto"
+        src={tableJardin}
+        alt=""
+        widths={[400, 800]}
+        sizes={`(max-width: 768px) 400px, 800px`}
+      />
+      <div>
+        <p>
+          La maison peut loger jusqu'à 14 personnes. (idéalement 8 à 12
+          personnes)<br /><br />
+          <ul>
+            <li>
+              la <b>"chambre années folles "</b> avec 1 lit double avec couette (160x200)
+              + 1 lit bébé/enfant jusqu'à 4 ans
+            </li>
+            <li>
+              la <b>"chambre aux oiseaux"</b> avec un lit double avec couette (160x200
+              ) + 1 lit simple 80x200
+            </li>
+            <li>la <b>"chambre pimprenelle"</b> avec 2 lits de 100x190</li>
+            <li><b>"Chez Germaine"</b> : chambre avec un lit 140x200</li>
+            <li>
+              la <b>"chambre voyages"</b> avec 2 lits avec couettes 80x200 ou bien
+              160x200 et en <b>mezzanine</b> un lit avec couette de 140x190 et un
+              lit 120x180
+            </li>
+            <li>
+              les draps et les serviettes ne sont pas fournis, si vous souhaitez
+              qu'on vous les fournisse c'est possible pour 12€ par personne
+            </li>
+            <li>2 salles de bains</li>
+            <li>1 grande cour protégée</li>
+            <li>1 grand espace pour barbecue</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </WhiteCard>
+</Layout>
