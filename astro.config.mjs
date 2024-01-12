@@ -4,22 +4,19 @@ import sitemap from "@astrojs/sitemap";
 //import compress from "astro-compress";
 
 import icon from "astro-icon";
-
 import robotsTxt from "astro-robots-txt";
+
+import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://lamagdeleine-chatenay.fr/",
   prefetch: {
-    prefetchAll: true,
+    prefetchAll: true
   },
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    sitemap(),
-    icon(),
-    //compress(),
-    robotsTxt(),
-  ],
+  integrations: [tailwind({
+    applyBaseStyles: false
+  }), sitemap(), icon(),
+  //compress(),
+  robotsTxt(), solidJs()]
 });

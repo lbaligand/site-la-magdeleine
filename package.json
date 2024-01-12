@@ -12,10 +12,12 @@
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/solid-js": "^4.0.1",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/josefin-slab": "^5.0.19",
     "@fontsource-variable/open-sans": "^5.0.22",
     "@fontsource/bilbo-swash-caps": "^5.0.8",
+    "@iconify-json/eva": "^1.1.10",
     "@iconify-json/mdi": "^1.1.64",
     "@popperjs/core": "^2.11.8",
     "@types/bootstrap": "^5.2.10",
@@ -30,6 +32,7 @@
     "embla-carousel": "^8.0.0-rc19",
     "embla-carousel-autoplay": "^8.0.0-rc19",
     "jquery": "^3.7.1",
+    "solid-js": "^1.8.10",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
