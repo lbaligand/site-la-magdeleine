@@ -18,6 +18,7 @@ const { title } = Astro.props as Props;
     <title>{title}</title>
     <ViewTransitions />
     <slot name="seo" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body class="bg-background font-body">
     <p class="font-title text-7xl drop-shadow-special text-center pt-10 pb-4">

@@ -5,6 +5,8 @@ import sitemap from "@astrojs/sitemap";
 
 import icon from "astro-icon";
 
+import robotsTxt from "astro-robots-txt";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://lamagdeleine-chatenay.fr/",
@@ -18,5 +20,6 @@ export default defineConfig({
     sitemap(),
     icon(),
     //compress(),
+    robotsTxt(),
   ],
 });
