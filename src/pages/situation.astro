@@ -1,0 +1,65 @@
+---
+import { SEO } from "astro-seo";
+import solutre from "../assets/img/solutre.jpg";
+import WhiteCard from "../components/WhiteCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Le Domaine de la Magdeleine - Situation">
+  <SEO
+    slot="seo"
+    description=""
+    openGraph={{
+      basic: {
+        title: "Domaine de la Magdeleine - Situation",
+        type: "website",
+        image: solutre.src,
+      },
+    }}
+  />
+  <WhiteCard heading="Situation du domaine de la Magdeleine">
+    <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-6 my-4">
+      <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+      <iframe
+        class="w-full h-64 md:h-96"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52451.531266315666!2d4.348464551197883!3d46.29704551053714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f391b7fd1f17c7%3A0xd5160d809cfb1743!2sLa+Magdeleine%2C+71800+Ch%C3%A2tenay!5e0!3m2!1sfr!2sfr!4v1469623487901"
+        frameborder="0"
+        style="border:0"
+        allowfullscreen></iframe>
+      <div class="grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1">
+        <div class="md:text-left text-center">
+          <p>
+            Tel:
+            <strong>+33 6 30 36 58 03</strong>
+          </p><br />
+          <p>
+            Email:
+            <strong
+              ><a href="mailto:b.baligand@orange.fr">b.baligand@orange.fr</a
+              ></strong
+            >
+          </p><br />
+          <p>
+            Adresse:
+            <strong
+              >La Magdeleine
+              <br />&emsp;&emsp;&emsp;&emsp;950 route de Gibles
+              <br />&emsp;&emsp;&emsp;&emsp;71800 Châtenay</strong
+            ><br /><br />
+          </p>
+          <p><strong>GPS</strong> : 46°17'51"N - 4°23'18"E</p><br />
+        </div>
+
+        <p>
+          Situé à mi chemin entre le Nord et le Sud de la France. À une demie
+          heure de Mâcon Sud et à une heure trente au Nord Ouest de Lyon. Vous
+          reconnaîtrez la maison grâce à son séquoia centenaire.
+          <br />
+          <br />
+          La gare de La Clayette est à 5 minutes en voiture. La gare TGV Macon Loche
+          est à 35 minutes en voiture.
+        </p>
+      </div>
+    </div>
+  </WhiteCard>
+</Layout>

@@ -1,0 +1,36 @@
+{
+  "name": "site-la-magdeleine-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/solid-js": "^4.0.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/josefin-slab": "^5.0.19",
+    "@fontsource/bilbo-swash-caps": "^5.0.8",
+    "@iconify-json/eva": "^1.1.10",
+    "@iconify-json/mdi": "^1.1.64",
+    "astro": "^4.1.2",
+    "astro-compress": "^2.2.7",
+    "astro-icon": "^1.0.2",
+    "astro-robots-txt": "^1.0.0",
+    "astro-seo": "^0.8.0",
+    "bootstrap": "^5.3.2",
+    "embla-carousel": "^8.0.0-rc19",
+    "embla-carousel-autoplay": "^8.0.0-rc19",
+    "solid-js": "^1.8.10",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.0.1"
+  }
+}

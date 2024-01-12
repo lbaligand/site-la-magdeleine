@@ -1,0 +1,100 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import "../css/base.css";
+import MobileMenu from "../components/MobileMenu";
+import { Icon } from "astro-icon/components";
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+    <slot name="seo" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body class="bg-background font-body leading-relaxed">
+    <nav
+      class="w-full flex items-center justify-between px-2 sticky top-0 h-12 bg-[#f8f8f8] border border-[#e7e7e7] z-50 lg:hidden"
+    >
+      <div class="font-bold text-menu tracking-widest text-xl">
+        LA MAGDELEINE
+      </div>
+      <MobileMenu client:media="(max-width: 1024px)">
+        <Icon
+          class="text-4xl p-1 border rounded hover:bg-[#e0e0e0] text-[#747474]"
+          name="eva:menu-outline"
+          slot="icon"
+        />
+        <div
+          class="flex flex-col w-full bg-[#f8f8f8] text-menu text-xl p-2 border-b"
+        >
+          <a class="p-2 uppercase hover:text-menu-hover" href="/">Accueil</a>
+          <a class="p-2 uppercase hover:text-menu-hover" href="/presentation"
+            >Présentation</a
+          >
+          <a class="p-2 uppercase hover:text-menu-hover" href="/histoire"
+            >Histoire</a
+          >
+          <a class="p-2 uppercase hover:text-menu-hover" href="/situation"
+            >Situation</a
+          >
+          <a class="p-2 uppercase hover:text-menu-hover" href="/activites"
+            >Activités</a
+          >
+          <a class="p-2 uppercase hover:text-menu-hover" href="/tarifs"
+            >Tarifs</a
+          >
+          <a class="p-2 uppercase hover:text-menu-hover" href="/avis">Avis</a>
+        </div>
+      </MobileMenu>
+    </nav>
+    <header>
+      <p class="font-title text-7xl drop-shadow-special text-center pt-10 pb-4">
+        Le domaine de la Magdeleine
+      </p>
+      <p
+        class="text-secondary lg:uppercase tracking-widest text-xl drop-shadow-special text-center"
+      >
+        Châtenay - Bourgogne du Sud
+      </p>
+
+      <nav
+        class="lg:flex hidden w-full flex-wrap my-8 text-menu uppercase text-lg tracking-wide h-fit justify-center items-center bg-white"
+      >
+        <a class="p-8 hover:text-menu-hover" href="/">Accueil</a>
+        <a class="p-8 hover:text-menu-hover" href="/presentation"
+          >Présentation</a
+        >
+        <a class="p-8 hover:text-menu-hover" href="/histoire">Histoire</a>
+        <a class="p-8 hover:text-menu-hover" href="/situation">Situation</a>
+        <a class="p-8 hover:text-menu-hover" href="/activites">Activités</a>
+        <a class="p-8 hover:text-menu-hover" href="/tarifs">Tarifs</a>
+        <a class="p-8 hover:text-menu-hover" href="/avis">Avis</a>
+      </nav>
+    </header>
+
+    <main><slot /></main>
+    <footer>
+      <div
+        class="bg-white w-full px-4 h-32 text-center flex justify-center items-center"
+      >
+        <p>
+          La Magdeleine, 950 route de Gibles, 71800 Châtenay - Tel:+33 6 30 36
+          58 03 - <a
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            href="mailto:b.baligand@orange.fr">b.baligand@orange.fr</a
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

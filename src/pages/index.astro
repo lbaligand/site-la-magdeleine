@@ -1,0 +1,169 @@
+---
+import { SEO } from "astro-seo";
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import image1 from "../assets/img/maisonvuefeuillage.jpg";
+import image2 from "../assets/img/EnseigneLaMagdeleine.jpg";
+import image3 from "../assets/img/hersemaison.jpg";
+import image4 from "../assets/img/facadenord.jpg";
+import image5 from "../assets/img/etang.jpg";
+import image6 from "../assets/img/musee.jpg";
+import image7 from "../assets/img/buanderiebien.jpg";
+import image8 from "../assets/img/chambre1930.jpg";
+import image9 from "../assets/img/chambreoiseaux.jpg";
+import image10 from "../assets/img/chambrevoyages.jpg";
+import image11 from "../assets/img/mezzaninechambrevoyages.jpg";
+import image12 from "../assets/img/mezzaninevoyages.jpg";
+import image13 from "../assets/img/sdbbas.jpg";
+import image14 from "../assets/img/coussinsvoyages.jpg";
+import image15 from "../assets/img/ChPimprenelle.jpg";
+import image16 from "../assets/img/ChezGermaine.jpg";
+import image17 from "../assets/img/sallebainshaut.jpg";
+import image18 from "../assets/img/salonentier.jpg";
+import image19 from "../assets/img/salon2.jpg";
+import image20 from "../assets/img/CuisineGenerale.jpg";
+import image21 from "../assets/img/wc.jpg";
+import image22 from "../assets/img/tablext.jpg";
+import image23 from "../assets/img/terassefleurs.jpg";
+import image24 from "../assets/img/barbecue.jpg";
+import image25 from "../assets/img/terassemaison.jpg";
+import image26 from "../assets/img/balancoire.jpg";
+import image27 from "../assets/img/vuelionel.jpg";
+import WhiteCard from "../components/WhiteCard.astro";
+
+const images = [
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+  image10,
+  image11,
+  image12,
+  image13,
+  image14,
+  image15,
+  image16,
+  image17,
+  image18,
+  image19,
+  image20,
+  image21,
+  image22,
+  image23,
+  image24,
+  image25,
+  image26,
+  image27,
+];
+---
+
+<Layout title="Le Domaine de la Magdeleine - Accueil">
+  <SEO
+    slot="seo"
+    description="Grand gîte en Bourgogne du Sud, au coeur du Charolais-Brionnais (71800), proche Charolles, Paray-le-monial, Cluny, Macon"
+    openGraph={{
+      basic: {
+        title: "Grand Gîte Bourgogne du Sud - Domaine de la Magdeleine",
+        type: "website",
+        image: image1.src,
+      },
+    }}
+  />
+  <WhiteCard shouldDisableMobilePadding>
+    <div id="slider_homepage" class="overflow-hidden bg-background lg:bg-white">
+      <div class="relative">
+        <div class="embla__viewport">
+          <div class="embla__container flex">
+            {
+              images.map((image, idx) => (
+                <Image
+                  class="embla__slide h-96 md:h-[30rem] lg:h-[40rem] opacity-0 transition-opacity duration-700 object-contain min-w-0 grow-0 shrink-0 basis-full"
+                  src={image}
+                  alt={`Homepage slider photo ${idx}`}
+                  format="avif"
+                  onload="this.style.opacity=1"
+                  widths={[400, 800, image.width]}
+                  sizes={`(max-width: 768px) 400px, (max-width: 1280px) 800px, ${image.width}px`}
+                />
+              ))
+            }
+          </div>
+        </div>
+        <div
+          class="flex absolute top-1/2 -translate-y-1/2 w-full justify-between"
+        >
+          <button
+            aria-label="Previous Homepage Photo"
+            class="embla__prev hover:brightness-75 transition-all active:scale-90"
+          >
+            <Icon
+              class="lg:text-4xl text-menu md:text-xl lg:block hidden"
+              name="mdi:chevron-left"
+            />
+          </button>
+          <button
+            aria-label="Next Homepage Photo"
+            class="embla__next hover:brightness-75 transition-all active:scale-90"
+          >
+            <Icon
+              class="lg:text-4xl text-menu md:text-xl lg:block hidden"
+              name="mdi:chevron-right"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div class="embla__thumbs my-2 overflow-hidden">
+        <div class="embla__viewport">
+          <div class="embla__container flex">
+            {
+              images.map((image, idx) => (
+                <Image
+                  class={`embla__slide border active:opacity-60 border-transparent hover:border-black transition-all cursor-pointer ${
+                    idx === 0 ? "opacity-100" : "opacity-50"
+                  } object-cover object-center min-w-0 grow-0 shrink-0 basis-1/6 lg:basis-1/12 h-12 lg:h-16`}
+                  src={image}
+                  alt={`Homepage slider photo ${idx}`}
+                  format="avif"
+                  width={128}
+                />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+      <script>
+        import { createSlider } from "../components/slider";
+
+        document.addEventListener("astro:page-load", () => {
+          createSlider({
+            mainId: "slider_homepage",
+            autoplay: true,
+          });
+        });
+      </script>
+    </div>
+    <section class="p-8">
+      <h1 class="text-center text-xl text-menu">
+        Bienvenue à <br /><span class="font-title text-7xl text-secondary"
+          >Châtenay</span
+        >
+      </h1>
+      <div class="w-64 my-4 h-px bg-black mx-auto"></div>
+      <p class="text-center">
+        Dans un environnement bucolique, cette grande ferme en pierre (aménagée
+        sur 220 m2 avec de grandes dépendances) est située à 500 m d'altitude en
+        Bourgogne à la campagne, elle dispose d'un grand terrain clos. Si vous
+        aimez la nature au calme, les promenades, elle sera parfaite pour vous
+        retrouver et vous ressourcer en famille ou entre amis pour les vacances
+        ou les weekends.
+      </p>
+    </section>
+  </WhiteCard>
+</Layout>

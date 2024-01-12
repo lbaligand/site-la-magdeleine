@@ -1,0 +1,25 @@
+---
+export interface Props {
+  heading?: string;
+  shouldDisableMobilePadding?: boolean;
+}
+
+const { heading, shouldDisableMobilePadding } = Astro.props as Props;
+---
+
+<section
+  class={`w-full bg-white text-lg ${
+    shouldDisableMobilePadding ? "" : "p-8"
+  } lg:p-8 lg:w-4/5 lg:max-w-[1280px] lg:mt-0 mt-8 mb-8 h-fit mx-auto relative`}
+>
+  {
+    heading && (
+      <Fragment>
+        <h2 class="border-t border-b min-w-56 border-menu p-4 text-menu-hover w-fit mx-auto tracking-widest uppercase font-bold text-lg text-center">
+          {heading}
+        </h2>
+      </Fragment>
+    )
+  }
+  <slot />
+</section>

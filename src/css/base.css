@@ -1,0 +1,6 @@
+@import "@fontsource/bilbo-swash-caps";
+@import "@fontsource-variable/josefin-slab";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

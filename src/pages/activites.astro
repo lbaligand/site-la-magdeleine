@@ -1,0 +1,263 @@
+---
+import { SEO } from "astro-seo";
+import { Image } from "astro:assets";
+import WhiteCard from "../components/WhiteCard.astro";
+import Layout from "../layouts/Layout.astro";
+import taureau from "../assets/img/taureaudyo.jpg";
+import solutre from "../assets/img/solutre.jpg";
+import cluny from "../assets/img/cluny.jpg";
+import andree from "../assets/img/chateaudree.jpg";
+import clayette from "../assets/img/chateauLaClayette.jpg";
+---
+
+<Layout title="La Magdeleine - Activités">
+  <SEO
+    slot="seo"
+    description=""
+    openGraph={{
+      basic: {
+        title: "Domaine de la Magdeleine - Activités",
+        type: "website",
+        image: taureau.src,
+      },
+    }}
+  />
+  <WhiteCard heading="GASTRONOMIE ET PRODUITS DU TERROIR">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 my-4">
+      <Image
+        class="mx-auto"
+        src={taureau}
+        alt=""
+        widths={[400, 800]}
+        sizes={`(max-width: 768px) 400px, 800px`}
+      />
+      <div class="col-md-6">
+        <p>
+          <a
+            target="_blank"
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            href="http://www.guide-evasion.fr/ou-partir/paysregions/jai-visite-un-incroyable-marche-dans-le-brionnais/"
+            >Le marché aux bestiaux de Saint Christophe en Brionnais</a
+          >: Partez à la découverte de ce haut-lieu du négoce des bovins. Tout
+          au long de l'année, dans un cadre exceptionnel, ce "spectacle" peu
+          commun qui allie harmonieusement le passé, le présent et le futur vous
+          permet de participer à la transaction des bovins ! Dôté depuis 2009
+          d'un marché au cadran, le Marché aux Bestiaux vous permet non
+          seulement de participer aux transactions traditionnelles, mais aussi
+          aux enchères passées dans le cadran moderne ! La pression monte !
+        </p>
+        <br />
+        <p>
+          Profitez de votre séjour pour aller déguster les chocolats Dufoux à La
+          Clayette. Une fois par mois il est possible à Charolles de partager le
+          savoir faire du maître chocolatier et de vous initier à la fabrication
+          de chocolats.
+        </p>
+      </div>
+    </div>
+  </WhiteCard>
+
+  <WhiteCard heading="Nature, détente">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 my-4">
+      <div>
+        <p>Pêche possible dans l'étang privé de la propriété.</p>
+        <br />
+        <p>
+          Partez à pied ou en vélo ou VTT de la maison pour de nombreuses
+          randonnées (topos à votre disposition). Randonnée des fours à pains à
+          Châtenay le dernier dimanche de Juin.
+        </p>
+        <br />
+        <p>
+          <a
+            target="_blank"
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            href="http://www.francevelotourisme.com/base-1/etapes/voie-verte-bourgogne-du-sud-cormatin-cluny"
+            >La voie verte entre Cluny et Cormatin</a
+          >: Ambiance intemporelle pour cette étape mythique sur les voies
+          vertes de Bourgogne.
+        </p>
+        <br />
+        <p>
+          <a
+            target="_blank"
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            href="http://www.bourgogneromane.com/edifices/dun.htm"
+            >La montagne de Dun</a
+          > (708 m) avec sa petite chapelle romane, magnifique point de vue sur la
+          vallée du Sornin, en contre bas le magnifique viaduc de Mussy (lieu idéal
+          de pique nique avec les enfants)
+        </p>
+        <br />
+        <p>
+          Nous saurons vous conseiller des lieux de baignade nature à proximité
+          de la Magdeleine.
+        </p>
+      </div>
+      <Image
+        class="mx-auto"
+        src={solutre}
+        alt=""
+        title="La Roche de Solutré"
+        widths={[400, 800]}
+        sizes={`(max-width: 768px) 400px, 800px`}
+      />
+    </div>
+    <div>
+      <p>
+        <a
+          target="_blank"
+          class="text-blue-500 hover:text-blue-600 hover:underline"
+          href="http://www.mon-coin-de-bourgogne.fr/roche-de-solutre/"
+          >La Roche de Solutré</a
+        >: Haute de ses 493 m, Fruit d'un phénomène géologique rare, ce monument
+        de la nature est l'emblème de la Bourgogne du Sud. Inutile d'être un
+        grand gologue pour apprécier son panorama spectaculaire.. . Au pied de
+        la roche, vous pourrez visiter <a
+          target="_blank"
+          class="text-blue-500 hover:text-blue-600 hover:underline"
+          href="http://www.solutre.com/document.php?pagendx=54"
+          >le musée de la préhistoire</a
+        >. Profitez-en pour faire un arrêt baignade au lac de Saint Point ou une
+        dégustation d'un grand cru dans une cave bourguignone.
+      </p>
+      <p>
+        Et aussi: <p class="text-xl font-bold">
+          <a
+            target="_blank"
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            href="http://www.saintrock.eu/">Le festival Saint Rock</a
+          > , un des grands rendez vous musicaux de l'été, <a
+            target="_blank"
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            href="http://musique-en-brionnais.com"
+            >Musiques en Charolais Brionnais</a
+          > un festival de musique de chambre la première semaine d'août.
+        </p>
+      </p>
+    </div>
+  </WhiteCard>
+  <WhiteCard heading="Patrimoine">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 my-4">
+      <div>
+        <Image
+          class="mx-auto"
+          src={cluny}
+          alt=""
+          title="L'abbaye de Cluny"
+          widths={[400, 800]}
+          sizes={`(max-width: 768px) 400px, 800px`}
+        />
+        <br />
+        <h3 class="font-title text-secondary text-4xl py-2">Des châteaux...</h3>
+        <p>
+          <a
+            target="_blank"
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            href="http://chateau-de-dree.com/">Château de Drée</a
+          > À Curbigny, petit Versailles du Brionnais, visites guidées des intérieurs
+          et des jardins.
+        </p>
+        <br />
+        <p>
+          <a
+            target="_blank"
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            href="http://www.chateaudecormatin.com/fr">Château de Cormatin</a
+          >: Les marquis d'Huxelles l'ont fait construire au début du XVIIe
+          siècle pour témoigner de leur puissance et de leur prestige: larges
+          douves, tourelles, haut socle à bossages, canonnières et pont-levis,
+          le château était fait pour impressionner. Il y réussit encore
+          aujourd'hui.
+        </p>
+        <br />
+        <Image
+          class="mx-auto"
+          src={clayette}
+          alt=""
+          title="Le château de La Clayette"
+          widths={[400, 800]}
+          sizes={`(max-width: 768px) 400px, 800px`}
+        />
+      </div>
+      <div>
+        <h3 class="font-title text-secondary text-4xl py-2">
+          Des Chapelles...
+        </h3>
+        <p>
+          <a
+            target="_blank"
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            href="http://www.bourgogneromane.com/brionnais.htm"
+            >Circuit des Eglises Romanes</a
+          >: Paray-le-Monial, Bois Sainte Marie, Anzy-le-Duc et bien d'autres
+          sans oublier celle de Saint Germain en Brionnais et son
+          "débeurdinoire", selon la tradition locale d'enlever la bétise!
+        </p>
+        <br />
+        <p>
+          <a
+            target="_blank"
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            href="http://www.mon-coin-de-bourgogne.fr/abbaye-de-cluny/"
+            >Cluny: Abbaye Bénédictine</a
+          >, aujourd'hui encore on vient du monde entier pour admirer les
+          vestiges de la célèbre abbatiale.
+
+          <p>
+            <br />
+            A proximité: une visite du Haras national vous permet de découvrir les
+            écuries du XIXème siècle.
+          </p>
+          <Image
+            class="mx-auto"
+            src={andree}
+            alt=""
+            title="Le château de Drée"
+            widths={[400, 800]}
+            sizes={`(max-width: 768px) 400px, 800px`}
+          />
+          <br />
+          <h3 class="font-title text-secondary text-4xl py-3">
+            De beaux villages...
+          </h3>
+          <p>
+            <a
+              target="_blank"
+              class="text-blue-500 hover:text-blue-600 hover:underline"
+              href="https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_La_Clayette"
+              >La Clayette</a
+            >: Petite ville de 2400 habitants, très joli château sur le lac,
+            visite des extérieurs le lundi avec l'Office de Tourisme, concours
+            hippique dans le parc du château en août.
+          </p>
+          <p>
+            <a
+              target="_blank"
+              class="text-blue-500 hover:text-blue-600 hover:underline"
+              href="http://semur-en-brionnais.fr/">Semur-en- Brionnais</a
+            > Classé plus beau village de France (château Saint Hugues).
+          </p>
+          <p>
+            <a
+              target="_blank"
+              class="text-blue-500 hover:text-blue-600 hover:underline"
+              href="http://www.ville-charolles.fr/">Charolles</a
+            >: Appelée aussi "La petite Venise" avec sa rivière qui la traverse,
+            l'Arconce, vous pourrez y découvrir une collection de faïence de
+            Charolles au musée du Prieuré (quelques pièces ont té fabriquées
+            pour le film Harry Potter).
+          </p>
+          <p>
+            <a
+              target="_blank"
+              class="text-blue-500 hover:text-blue-600 hover:underline"
+              href="https://www.brancion.fr/">Brancion</a
+            >: village médiéval (Xe, XIIe, XIVe) est la plus importante place
+            forte de la Bourgogne du sud.
+          </p>
+        </p>
+      </div>
+    </div>
+  </WhiteCard>
+</Layout>

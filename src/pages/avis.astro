@@ -1,0 +1,72 @@
+---
+import { SEO } from "astro-seo";
+import { Image } from "astro:assets";
+import WhiteCard from "../components/WhiteCard.astro";
+import Layout from "../layouts/Layout.astro";
+import star from "../assets/img/star.jpg";
+import image2 from "../assets/img/EnseigneLaMagdeleine.jpg";
+---
+
+<Layout title="Le Domaine de la Magdeleine - Avis">
+  <SEO
+    slot="seo"
+    description=""
+    openGraph={{
+      basic: {
+        title: "Domaine de la Magdeleine - Avis",
+        type: "website",
+        image: image2.src,
+      },
+    }}
+  />
+  <WhiteCard heading="Commentaires des voyageurs">
+    <div class="flex my-4 flex-col gap-4 text-xl">
+      <blockquote class="border-l-4 p-4">
+        <p>
+          "Très bon weekend entre amis dans cette maison typique du charolais.
+          Nous avons choisi cette maison pour le cadre et les aménagements
+          extérieurs et nous n'avons pas été déçus ! Très bonne réactivité de
+          nos hôtes."
+        </p>
+      </blockquote>
+      <blockquote class="border-l-4 p-4">
+        <p>
+          "Si vous cherchez une maison de famille vous la trouverez à la
+          Magdeleine ! De beaux espaces, du confort, du bon goût, très bien
+          équipée, de la tranquillité tout est réuni pour passer d'excellents
+          moments."
+        </p>
+      </blockquote>
+      <blockquote class="border-l-4 p-4">
+        <p>
+          "La Magdeleine est un enchantement, tant pour la déco (parfait
+          équilibre ancien/moderne) que pour son aspect fonctionnel. Tout est
+          bien pensé et on s'y sent à l'aise immédiatement. Il ne manque rien."
+        </p>
+      </blockquote>
+      <blockquote class="border-l-4 p-4">
+        <p>
+          "Superbe maison de famille idéalement située dans un écrin de verdure
+          ayant pour seuls voisins des vaches curieuses et leurs petits. Cour
+          fermée appropriée pour les enfants en bas ége, tout comme la
+          balanéoire (qui a également charmée les plus grands !!) Chacun de nous
+          a pu trouver son espace au sein de cette jolie maison, décorée avec
+          goût et dont le salon, la salle à manger et la cuisine étaient
+          suffisamment grands pour y accueillir tout ce petit monde (10 adultes
+          et 2 enfants). Nous recommandons grandement !!"
+        </p>
+      </blockquote>
+
+      <p>
+        4.9/5 <Image class="inline" src={star} alt="" /> (31 avis)
+      </p>
+      <p>
+        Plus de commentaires sur <a
+          target="_blank"
+          class="text-blue-500 hover:text-blue-600 hover:underline"
+          href="https://www.airbnb.fr/rooms/3198442">notre page Airbnb</a
+        >.
+      </p>
+    </div>
+  </WhiteCard>
+</Layout>
