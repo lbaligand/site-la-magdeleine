@@ -117,16 +117,6 @@ const images = [
             />
           </button>
         </div>
-        <script>
-          import { createSlider } from "../components/slider";
-
-          document.addEventListener("astro:page-load", () => {
-            createSlider({
-              mainId: "slider_homepage",
-              autoplay: true,
-            });
-          });
-        </script>
       </div>
 
       <div class="embla__thumbs my-2 overflow-hidden">
@@ -135,7 +125,9 @@ const images = [
             {
               images.map((image, idx) => (
                 <Image
-                  class="embla__slide border active:opacity-60 border-transparent hover:border-black transition-all cursor-pointer opacity-50 object-cover object-center min-w-0 grow-0 shrink-0 basis-1/6 lg:basis-1/12 h-12 lg:h-16"
+                  class={`embla__slide border active:opacity-60 border-transparent hover:border-black transition-all cursor-pointer ${
+                    idx === 0 ? "opacity-100" : "opacity-50"
+                  } object-cover object-center min-w-0 grow-0 shrink-0 basis-1/6 lg:basis-1/12 h-12 lg:h-16`}
                   src={image}
                   alt={`Homepage slider photo ${idx}`}
                   format="avif"
@@ -146,6 +138,16 @@ const images = [
           </div>
         </div>
       </div>
+      <script>
+        import { createSlider } from "../components/slider";
+
+        document.addEventListener("astro:page-load", () => {
+          createSlider({
+            mainId: "slider_homepage",
+            autoplay: true,
+          });
+        });
+      </script>
     </div>
     <section>
       <h1 class="text-center text-xl text-menu">
