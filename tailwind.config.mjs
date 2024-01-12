@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         title: "Bilbo Swash Caps",
         heading: "Josefin Slab Variable",
-        body: "Open Sans Variable",
+        body: "sans-serif",
       },
       colors: {
         background: "#F5F5DC",
