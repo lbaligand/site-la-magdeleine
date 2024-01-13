@@ -37,7 +37,9 @@ const {
                 src={image.image}
                 alt={image.alt ?? `${sliderId} photo numero ${idx}`}
                 title={image.alt}
+                loading={idx === 0 ? "eager" : "lazy"}
                 format="avif"
+                decoding="async"
                 onload="this.style.opacity=1"
                 widths={[400, 800, image.image.width]}
                 sizes={`(max-width: 768px) 400px, (max-width: 1280px) 800px, ${image.image.width}px`}
@@ -85,7 +87,10 @@ const {
                   title={`${image.alt} - Version miniature`}
                   alt={`${image.alt} - Version miniature`}
                   format="avif"
-                  width={128}
+                  decoding="async"
+                  loading="lazy"
+                  widths={[64, 128]}
+                  sizes={`(max-width: 768px) 64px, 128px`}
                 />
               ))}
             </div>

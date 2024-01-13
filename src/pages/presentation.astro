@@ -26,6 +26,8 @@ import WhiteCard from "../components/WhiteCard.astro";
         src={vueCour}
         title="La Magdeleine - Vue sur la cour"
         alt="La Magdeleine - Vue sur la cour"
+        decoding="async"
+        format="avif"
         widths={[400, 800]}
         sizes={`(max-width: 768px) 400px, 800px`}
       />
@@ -69,6 +71,9 @@ import WhiteCard from "../components/WhiteCard.astro";
         src={tableJardin}
         title="La Magdeleine - Vue sur le jardin"
         alt="La Magdeleine - Vue sur le jardin avec une table en premier plan"
+        format="avif"
+        decoding="async"
+        loading="lazy"
         widths={[400, 800]}
         sizes={`(max-width: 768px) 400px, 800px`}
       />
