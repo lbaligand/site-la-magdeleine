@@ -10,7 +10,7 @@ import andree from "../assets/img/chateaudree.jpg";
 import clayette from "../assets/img/chateauLaClayette.jpg";
 ---
 
-<Layout title="La Magdeleine - Activités">
+<Layout title="Le Domaine de la Magdeleine - Activités">
   <SEO
     slot="seo"
     description=""
@@ -23,11 +23,14 @@ import clayette from "../assets/img/chateauLaClayette.jpg";
     }}
   />
   <WhiteCard heading="GASTRONOMIE ET PRODUITS DU TERROIR">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 my-4">
+    <div class="grid grid-cols-1 items-center lg:grid-cols-2 gap-6 my-4">
       <Image
         class="mx-auto"
         src={taureau}
-        alt=""
+        alt="Le taureau de Charolles"
+        title="Taureau"
+        format="avif"
+        decoding="async"
         widths={[400, 800]}
         sizes={`(max-width: 768px) 400px, 800px`}
       />
@@ -58,7 +61,7 @@ import clayette from "../assets/img/chateauLaClayette.jpg";
   </WhiteCard>
 
   <WhiteCard heading="Nature, détente">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 my-4">
+    <div class="grid grid-cols-1 items-center lg:grid-cols-2 gap-6 my-4">
       <div>
         <p>Pêche possible dans l'étang privé de la propriété.</p>
         <br />
@@ -97,8 +100,11 @@ import clayette from "../assets/img/chateauLaClayette.jpg";
       <Image
         class="mx-auto"
         src={solutre}
-        alt=""
+        alt="Vue sur La Roche de Solutré"
         title="La Roche de Solutré"
+        format="avif"
+        decoding="async"
+        loading="lazy"
         widths={[400, 800]}
         sizes={`(max-width: 768px) 400px, 800px`}
       />
@@ -143,8 +149,11 @@ import clayette from "../assets/img/chateauLaClayette.jpg";
         <Image
           class="mx-auto"
           src={cluny}
-          alt=""
+          alt="L'abbaye de Cluny"
           title="L'abbaye de Cluny"
+          format="avif"
+          decoding="async"
+          loading="lazy"
           widths={[400, 800]}
           sizes={`(max-width: 768px) 400px, 800px`}
         />
@@ -174,8 +183,11 @@ import clayette from "../assets/img/chateauLaClayette.jpg";
         <Image
           class="mx-auto"
           src={clayette}
-          alt=""
+          alt="Le château de La Clayette"
           title="Le château de La Clayette"
+          format="avif"
+          decoding="async"
+          loading="lazy"
           widths={[400, 800]}
           sizes={`(max-width: 768px) 400px, 800px`}
         />
@@ -212,8 +224,11 @@ import clayette from "../assets/img/chateauLaClayette.jpg";
           <Image
             class="mx-auto"
             src={andree}
-            alt=""
+            alt="Le château de Drée"
             title="Le château de Drée"
+            format="avif"
+            decoding="async"
+            loading="lazy"
             widths={[400, 800]}
             sizes={`(max-width: 768px) 400px, 800px`}
           />

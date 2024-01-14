@@ -1,0 +1,123 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+interface ImageWithAlt {
+  image: ImageMetadata;
+  alt?: string;
+}
+export interface Props {
+  sliderId: string;
+  images: ImageWithAlt[];
+  includeThumbnails?: boolean;
+  includeDots?: boolean;
+  isAutoplay?: boolean;
+  imageClass?: string;
+}
+
+const {
+  images,
+  sliderId,
+  includeThumbnails,
+  includeDots,
+  isAutoplay,
+  imageClass,
+} = Astro.props as Props;
+---
+
+<astro-slider data-slider={sliderId} data-autoplay={"" + isAutoplay}>
+  <div id="slider_homepage" class="overflow-hidden bg-background lg:bg-white">
+    <div class="relative">
+      <div class="embla__viewport">
+        <div class="embla__container flex">
+          {
+            images.map((image, idx) => (
+              <Image
+                class={`embla__slide ${imageClass} opacity-0 transition-opacity duration-700 object-contain min-w-0 grow-0 shrink-0 basis-full`}
+                src={image.image}
+                alt={image.alt ?? `${sliderId} photo numero ${idx}`}
+                title={image.alt}
+                loading={idx === 0 ? "eager" : "lazy"}
+                format="avif"
+                decoding="async"
+                onload="this.style.opacity=1"
+                widths={[400, 800, image.image.width]}
+                sizes={`(max-width: 768px) 400px, (max-width: 1280px) 800px, ${image.image.width}px`}
+              />
+            ))
+          }
+        </div>
+      </div>
+      {
+        includeDots && (
+          <div class="flex absolute top-1/2 -translate-y-1/2 w-full justify-between">
+            <button
+              aria-label="Previous Homepage Photo"
+              class="embla__prev hover:brightness-75 transition-all active:scale-90"
+            >
+              <Icon
+                class="lg:text-4xl text-menu md:text-xl lg:block hidden"
+                name="mdi:chevron-left"
+              />
+            </button>
+            <button
+              aria-label="Next Homepage Photo"
+              class="embla__next hover:brightness-75 transition-all active:scale-90"
+            >
+              <Icon
+                class="lg:text-4xl text-menu md:text-xl lg:block hidden"
+                name="mdi:chevron-right"
+              />
+            </button>
+          </div>
+        )
+      }
+    </div>
+    {
+      includeThumbnails && (
+        <div class="embla__thumbs my-2 overflow-hidden">
+          <div class="embla__viewport">
+            <div class="embla__container flex">
+              {images.map((image, idx) => (
+                <Image
+                  class={`embla__slide border active:opacity-60 border-transparent hover:border-black transition-all cursor-pointer ${
+                    idx === 0 ? "opacity-100" : "opacity-50"
+                  } object-cover object-center min-w-0 grow-0 shrink-0 basis-1/6 lg:basis-1/12 h-12 lg:h-16`}
+                  src={image.image}
+                  title={`${image.alt} - Version miniature`}
+                  alt={`${image.alt} - Version miniature`}
+                  format="avif"
+                  decoding="async"
+                  loading="lazy"
+                  widths={[64, 128]}
+                  sizes={`(max-width: 768px) 64px, 128px`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )
+    }
+  </div></astro-slider
+>
+<script>
+  import { createSlider } from "./slider";
+
+  class Slider extends HTMLElement {
+    constructor() {
+      super();
+
+      const { slider, autoplay } = this.dataset;
+      if (slider) {
+        document.addEventListener("astro:page-load", () => {
+          createSlider({
+            mainId: slider,
+            autoplay: autoplay === "true",
+          });
+        });
+      }
+    }
+  }
+
+  customElements.define("astro-slider", Slider);
+</script>

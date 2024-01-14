@@ -25,7 +25,9 @@ import Layout from "../layouts/Layout.astro";
         class="mx-auto"
         src={gp}
         title="Claude Marie 1943"
-        alt=""
+        alt="Photo historique de Claude Marie en 1943"
+        format="avif"
+        decoding="async"
         widths={[400, 800]}
         sizes={`(max-width: 768px) 400px, 800px`}
       />
@@ -57,7 +59,11 @@ import Layout from "../layouts/Layout.astro";
       <Image
         class="mx-auto"
         src={machine}
-        alt=""
+        title="Machine à coudre"
+        alt="Photo de la machine à coudre"
+        format="avif"
+        decoding="async"
+        loading="lazy"
         widths={[400, 800]}
         sizes={`(max-width: 768px) 400px, 800px`}
       />

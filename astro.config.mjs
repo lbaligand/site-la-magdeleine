@@ -12,11 +12,16 @@ import solidJs from "@astrojs/solid-js";
 export default defineConfig({
   site: "https://lamagdeleine-chatenay.fr/",
   prefetch: {
-    prefetchAll: true
+    prefetchAll: true,
   },
-  integrations: [tailwind({
-    applyBaseStyles: false
-  }), sitemap(), icon(),
-  //compress(),
-  robotsTxt(), solidJs()]
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    sitemap(),
+    icon(),
+    robotsTxt(),
+    solidJs(),
+    //compress(),
+  ],
 });

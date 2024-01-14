@@ -130,8 +130,3 @@ export const createSlider = (sliderOptions: SliderOptions) => {
     }
   }
 };
-
-//document.addEventListener("astro:page-load", () => {
-//createSlider({ mainId: "slider_reviews" });
-//createSlider({ mainId: "slider_home", autoplay: true });
-//});

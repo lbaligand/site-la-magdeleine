@@ -1,8 +1,6 @@
 ---
 import { SEO } from "astro-seo";
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
 import image1 from "../assets/img/maisonvuefeuillage.jpg";
 import image2 from "../assets/img/EnseigneLaMagdeleine.jpg";
 import image3 from "../assets/img/hersemaison.jpg";
@@ -31,35 +29,117 @@ import image25 from "../assets/img/terassemaison.jpg";
 import image26 from "../assets/img/balancoire.jpg";
 import image27 from "../assets/img/vuelionel.jpg";
 import WhiteCard from "../components/WhiteCard.astro";
+import Slider from "../components/Slider.astro";
 
 const images = [
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-  image9,
-  image10,
-  image11,
-  image12,
-  image13,
-  image14,
-  image15,
-  image16,
-  image17,
-  image18,
-  image19,
-  image20,
-  image21,
-  image22,
-  image23,
-  image24,
-  image25,
-  image26,
-  image27,
+  {
+    image: image1,
+    alt: "Vue sur la maison et les feuillages",
+  },
+  {
+    image: image2,
+    alt: "Enseige de la Magdeleine sur la façade",
+  },
+  {
+    image: image3,
+    alt: "Vue sur la maison et la herse",
+  },
+  {
+    image: image4,
+    alt: "Façade nord de la maison",
+  },
+  {
+    image: image5,
+    alt: "Étang à proximité de la maison",
+  },
+  {
+    image: image6,
+    alt: "Des instruments du musée",
+  },
+  {
+    image: image7,
+    alt: "La pièce de la buanderie",
+  },
+  {
+    image: image8,
+    alt: "La chambre 1930",
+  },
+  {
+    image: image9,
+    alt: "La chambre Oiseaux",
+  },
+  {
+    image: image10,
+    alt: "La chambre Voyages",
+  },
+  {
+    image: image11,
+    alt: "La mezzanine de la chambre Voyages",
+  },
+  {
+    image: image12,
+    alt: "La chambre située sur la mezzanine de la chambre Voyages",
+  },
+  {
+    image: image13,
+    alt: "La salle de bain du bas",
+  },
+  {
+    image: image14,
+    alt: "Les coussins du lit de la chambre Voyages",
+  },
+  {
+    image: image15,
+    alt: "Les lits de la chambre Pimprenelle",
+  },
+  {
+    image: image16,
+    alt: "Les lits de la chambre Chez Germaine",
+  },
+  {
+    image: image17,
+    alt: "La salle de bain du haut",
+  },
+  {
+    image: image18,
+    alt: "Le salon de la maison",
+  },
+  {
+    image: image19,
+    alt: "Vue alternative du salon de la maison",
+  },
+  {
+    image: image20,
+    alt: "La cuisine de la maison",
+  },
+  {
+    image: image21,
+    alt: "Les toilettes",
+  },
+  {
+    image: image22,
+    alt: "Les deux tables à l'extérieur de la maison",
+  },
+  {
+    image: image23,
+    alt: "La terrasse avec les fleurs",
+  },
+  {
+    image: image24,
+    alt: "Vue sur le devant de la maison avec le barbecue",
+  },
+  {
+    image: image25,
+    alt: "Une deuxième vue de la terrasse qui donne sur la maison",
+  },
+  {
+    image: image26,
+    alt: "La balançoire dans le jardin",
+  },
+  {
+    image: image27,
+    alt: "Vue sur la colline et les vaches",
+  },
 ];
 ---
 
@@ -76,79 +156,14 @@ const images = [
     }}
   />
   <WhiteCard shouldDisableMobilePadding>
-    <div id="slider_homepage" class="overflow-hidden bg-background lg:bg-white">
-      <div class="relative">
-        <div class="embla__viewport">
-          <div class="embla__container flex">
-            {
-              images.map((image, idx) => (
-                <Image
-                  class="embla__slide h-96 md:h-[30rem] lg:h-[40rem] opacity-0 transition-opacity duration-700 object-contain min-w-0 grow-0 shrink-0 basis-full"
-                  src={image}
-                  alt={`Homepage slider photo ${idx}`}
-                  format="avif"
-                  onload="this.style.opacity=1"
-                  widths={[400, 800, image.width]}
-                  sizes={`(max-width: 768px) 400px, (max-width: 1280px) 800px, ${image.width}px`}
-                />
-              ))
-            }
-          </div>
-        </div>
-        <div
-          class="flex absolute top-1/2 -translate-y-1/2 w-full justify-between"
-        >
-          <button
-            aria-label="Previous Homepage Photo"
-            class="embla__prev hover:brightness-75 transition-all active:scale-90"
-          >
-            <Icon
-              class="lg:text-4xl text-menu md:text-xl lg:block hidden"
-              name="mdi:chevron-left"
-            />
-          </button>
-          <button
-            aria-label="Next Homepage Photo"
-            class="embla__next hover:brightness-75 transition-all active:scale-90"
-          >
-            <Icon
-              class="lg:text-4xl text-menu md:text-xl lg:block hidden"
-              name="mdi:chevron-right"
-            />
-          </button>
-        </div>
-      </div>
-
-      <div class="embla__thumbs my-2 overflow-hidden">
-        <div class="embla__viewport">
-          <div class="embla__container flex">
-            {
-              images.map((image, idx) => (
-                <Image
-                  class={`embla__slide border active:opacity-60 border-transparent hover:border-black transition-all cursor-pointer ${
-                    idx === 0 ? "opacity-100" : "opacity-50"
-                  } object-cover object-center min-w-0 grow-0 shrink-0 basis-1/6 lg:basis-1/12 h-12 lg:h-16`}
-                  src={image}
-                  alt={`Homepage slider photo ${idx}`}
-                  format="avif"
-                  width={128}
-                />
-              ))
-            }
-          </div>
-        </div>
-      </div>
-      <script>
-        import { createSlider } from "../components/slider";
-
-        document.addEventListener("astro:page-load", () => {
-          createSlider({
-            mainId: "slider_homepage",
-            autoplay: true,
-          });
-        });
-      </script>
-    </div>
+    <Slider
+      sliderId="slider_homepage"
+      isAutoplay
+      images={images}
+      includeDots
+      includeThumbnails
+      imageClass="h-96 md:h-[30rem] lg:h-[40rem]"
+    />
     <section class="p-8">
       <h1 class="text-center text-xl text-menu">
         Bienvenue à <br /><span class="font-title text-7xl text-secondary"
