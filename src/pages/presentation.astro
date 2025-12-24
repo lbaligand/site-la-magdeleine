@@ -2,7 +2,7 @@
 import { SEO } from "astro-seo";
 import { Image } from "astro:assets";
 import vueCour from "../assets/img/vuecour.jpg";
-import tableJardin from "../assets/img/tablejardin.jpg";
+import cour_repas from "../assets/img/cour_repas.jpg";
 import Layout from "../layouts/Layout.astro";
 import WhiteCard from "../components/WhiteCard.astro";
 ---
@@ -15,7 +15,7 @@ import WhiteCard from "../components/WhiteCard.astro";
       basic: {
         title: "Domaine de la Magdeleine - Présentation",
         type: "website",
-        image: tableJardin.src,
+        image: cour_repas.src,
       },
     }}
   />
@@ -68,7 +68,7 @@ import WhiteCard from "../components/WhiteCard.astro";
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
       <Image
         class="mx-auto self-center"
-        src={tableJardin}
+        src={cour_repas}
         title="Vue sur le jardin"
         alt="Vue sur le jardin avec une table en premier plan"
         format="avif"
